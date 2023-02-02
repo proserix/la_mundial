@@ -114,8 +114,8 @@ facturacion = facturacion_detalle(df)
 consumo = consumo_detalle(df)
     
 pv_fact_mes_dia = pv_facturacion(facturacion, 'day_name', 'month_name')
-pv_fact_dia_mes = pv_facturacion(data, 'day', 'month_name')
-pv_fact_sem_mes = pv_facturacion(data, 'semana_mes', 'month_name')
+pv_fact_dia_mes = pv_facturacion(facturacion, 'day', 'month_name')
+pv_fact_sem_mes = pv_facturacion(facturacion, 'semana_mes', 'month_name')
 
 # =======================================================================================
 
