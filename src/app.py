@@ -31,6 +31,30 @@ df = pd.read_pickle('data_la_mundial_2022.pickle')
 
 
 def facturacion_detalle(data):
+     map_day_name = {
+        'Monday'   :'01_Monday',
+        'Tuesday'  :'02_Tuesday',
+        'Wednesday':'03_Wednesday',
+        'Thursday' :'04_Thursday',
+        'Friday'   :'05_Friday',
+        'Saturday' :'06_Saturday',
+        'Sunday'   :'07_Sunday'
+    }
+
+    map_month_name = {
+        'January':'01_January',
+        'February':'02_February',
+        'March':'03_March',
+        'April':'04_April',
+        'May':'05_May',
+        'June':'06_June',
+        'July':'07_July',
+        'August':'08_August',
+        'September':'09_September',
+        'October':'10_October',
+        'November':'11_November',
+        'December':'12_December'
+    }
     df = data            .reset_index()            .groupby('fecha')            .agg({'precio_total_con_iva':sum})            .assign(date = lambda df_: df_.index.date)            .groupby('date')            .agg({'precio_total_con_iva':sum})            .asfreq('D')            .assign(day_name = lambda df_: df_.index.day_name())            .assign(month_name = lambda df_: df_.index.month_name())            .assign(day = lambda df_: df_.index.day)
 
     df.day_name   = df.day_name.map(map_day_name)
