@@ -18,7 +18,6 @@ import plotly.graph_objects as go
 from plotly_calplot import calplot
 import plotly.figure_factory as ff
 
-import numpy
 
 from math import factorial
 
@@ -179,7 +178,7 @@ def render_table(df):
 # =======================================================================================
 card_table = dbc.Row([
     dbc.Card([
-        render_table(facturacion)
+        render_table(df)
     ])
 ])
 
