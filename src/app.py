@@ -28,6 +28,7 @@ from math import factorial
 # external_stylesheets = ["https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css"]
 
 app = dash.Dash(__name__,external_stylesheets=[dbc.themes.COSMO])
+server = app.server
 
 df = pd.read_pickle('data_la_mundial_2022.pickle')
 
