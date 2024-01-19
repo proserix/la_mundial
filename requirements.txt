@@ -5,3 +5,4 @@ pandas==1.4.3
 plotly_calplot==0.1.13
 gunicorn
 dash-tools
+dash-ag-grid==2.0.0a5

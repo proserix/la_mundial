@@ -23,7 +23,7 @@ from plotly_calplot import calplot
 import numpy as np
 from datetime import date, datetime, timedelta
 from math import factorial
-from tqdm import tqdm
+# from tqdm import tqdm
 
 import io
 import base64
