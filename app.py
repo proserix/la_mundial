@@ -1195,6 +1195,8 @@ external_stylesheets = [dbc.themes.CYBORG]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
                 suppress_callback_exceptions=True)
 
+server = app.server
+
 app.layout = html.Div([
     dcc.Store(id='memory', storage_type='memory'),
     dcc.Store(id='memory-raw-df', storage_type='memory'),
