@@ -1,4 +1,5 @@
 import dash
+from dash import Dash
 # import jupyter_dash
 from dash.dependencies import Input, Output, State
 from dash import dash_table, no_update
@@ -1192,8 +1193,8 @@ defaultColDef = {
 }
 
 external_stylesheets = [dbc.themes.CYBORG]
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
-                suppress_callback_exceptions=True)
+
+app = Dash()
 
 server = app.server
 
