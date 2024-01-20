@@ -1194,7 +1194,8 @@ defaultColDef = {
 
 external_stylesheets = [dbc.themes.CYBORG]
 
-app = Dash()
+app = Dash(__name__, external_stylesheets=[
+           dbc.themes.CYBORG], suppress_callback_exceptions=True)
 
 server = app.server
 
@@ -1535,4 +1536,4 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
 
 if __name__ == '__main__':
     # app.run_server(port=8002, debug=True)
-    app.run_server(debug=False)
+    app.run(debug=False)
