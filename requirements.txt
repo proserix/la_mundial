@@ -1,8 +1,9 @@
 dash==2.8.1
+plotly==5.18.0
 dash_bootstrap_components==1.1.0
 numpy==1.23.4
-pandas==1.4.3
+pandas==1.5.3
 plotly_calplot==0.1.13
-gunicorn
+gunicorn==20.1.0
 dash-tools
 dash-ag-grid==2.0.0a5
