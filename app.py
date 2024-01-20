@@ -26,10 +26,11 @@ from datetime import date, datetime, timedelta
 from math import factorial
 # from tqdm import tqdm
 
+import os
 import io
 import base64
 
-
+WORK_DIRECTORY = f'{os.path.abspath(os.getcwd())}'
 # ======================================================================
 # font_size = 10
 # export_format     ='xlsx'
@@ -42,6 +43,8 @@ import base64
 # ]
 # # # feriados = pd.read_pickle('feriados_completo.pickle')
 # # ======================================================================
+
+
 def armarData(df):
 
     columns_string = [
@@ -86,7 +89,8 @@ def armarData(df):
     return df[columns_final]
 
 
-familia_denominacion = pd.read_pickle('familia_denominacion.pickle')
+familia_denominacion = pd.read_pickle(os.path.join(
+    WORK_DIRECTORY, 'familia_denominacion.pickle'))
 familia_denominacion.columns = [col.lower()
                                 for col in familia_denominacion.columns]
 familia_denominacion = familia_denominacion.applymap(
@@ -1535,5 +1539,5 @@ def update_output(list_of_contents, list_of_names, list_of_dates):
 
 
 if __name__ == '__main__':
-    # app.run_server(port=8002, debug=True)
-    app.run(debug=False)
+    app.run_server(port=8002, debug=True)
+    # app.run(debug=False)
